@@ -81,12 +81,15 @@ const Navbar = ({ session }: { session: userProps | null }) => {
             <Link href="/">Home</Link>
           </li>
           <li className="hover:text-gray-200">
-            <Link href="/about">About Us</Link>
+            <Link href="/projects">My Projects</Link>
           </li>
           <li className="hover:text-gray-200">
-            <Link href="/support">Support</Link>
+            <Link href="/blogs">Blogs</Link>
           </li>
           <li className="hover:text-gray-200">
+            <Link href="/contact">Contact Me</Link>
+          </li>
+          <li className="hover:text-gray-200 hidden">
             <Link href="/dashboard">Dashboard</Link>
           </li>
         </ul>
