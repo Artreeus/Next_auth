@@ -16,7 +16,7 @@ const DashboardPage = async () => {
             User Email : {session?.user?.email}{" "}
           </h1>
           <Image
-            src={session?.user?.image}
+            src={session?.user?.image || "https://img.freepik.com/free-vector/illustration-user-avatar-icon_53876-5907.jpg?t=st=1739136358~exp=1739139958~hmac=91870744816aff7a9123c97114fc19cfb39b1b7b0a58afca5f1f47d5e636179d&w=826"}
             alt="Image"
             height={500}
             width={500}

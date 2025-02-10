@@ -8,7 +8,7 @@ const LoadingPage = () => {
         width={500}
         height={500}
         alt="loading"
-        className="w-96 mx-auto"
+        className="w-96 mx-auto my-auto"
       />
     </div>
   );

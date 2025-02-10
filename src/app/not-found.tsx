@@ -2,9 +2,9 @@ import Image from "next/image";
 
 const NotFoundPage = () => {
   return (
-    <div className="w-[90%] mx-auto">
+    <div className="w-[90%] mx-auto mt-24">
       <Image
-        src="https://getpublii.com/docs/media/posts/30/404-error-page.png"
+        src="https://media.geeksforgeeks.org/wp-content/uploads/20230802153215/Error-404.png"
         width={500}
         height={500}
         alt="not found page"
