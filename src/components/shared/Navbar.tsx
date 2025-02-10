@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { signOut } from 'next-auth/react';
+import { ModeToggle } from "../shared/themeButton"; 
 
 type userProps = {
   user?: {
@@ -101,12 +102,13 @@ const Navbar = ({ session }: { session: userProps | null }) => {
             Logout
           </button>
         ) : (
-          <Link
-            href="/login"
-            className="bg-teal-500 text-white px-5 py-2 rounded-full hover:bg-teal-600 transition duration-200"
-          >
-            Login
-          </Link>
+          // <Link
+          //   href="/login"
+          //   className="bg-teal-500 text-white px-5 py-2 rounded-full hover:bg-teal-600 transition duration-200"
+          // >
+          //   Login
+          // </Link>
+          <ModeToggle />
         )}
       </div>
       

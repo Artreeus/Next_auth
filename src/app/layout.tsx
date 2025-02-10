@@ -3,6 +3,7 @@ import "./globals.css";
 import { authOptions } from "@/utils/authOptions";
 import { getServerSession } from "next-auth";
 import Navbar from "@/components/shared/Navbar";
+import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata: Metadata = {
   title: "Next Auth",
@@ -21,8 +22,15 @@ export default async function RootLayout({
 
     <html lang="en" data-theme="light">
       <body>
+      <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
         <Navbar session={session} />
         <div className="min-h-screen w-[90%] mx-auto">{children}</div>
+        </ThemeProvider>
       </body>
     </html>
   );
