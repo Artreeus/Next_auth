@@ -4,7 +4,12 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import {signIn} from "next-auth/react"
-import { loginUser } from "@/utils/actions/loginUser";
+import { loginUser } from "@/utils/actions/loginUser";import type { Metadata } from 'next'
+ 
+// either Static metadata
+export const metadata: Metadata = {
+  title: 'Login Page',
+}
 
 export type FormValues = {
   email: string;

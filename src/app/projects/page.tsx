@@ -1,6 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Code2 } from "lucide-react";
+import { Code2 } from "lucide-react";import type { Metadata } from 'next'
+ 
+// either Static metadata
+export const metadata: Metadata = {
+  title: 'All Projects Page',
+}
 
 async function getProjects() {
   const res = await fetch(

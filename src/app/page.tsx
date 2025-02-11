@@ -6,6 +6,13 @@ import InfiniteCarousel from "@/components/shared/InfiniteCarousel";
 import Footer from '@/components/ui/Footer';
 // import { BlogCRUD ,ProjectCRUD } from '@/components/shared/CRUDComponents';
 
+import type { Metadata } from 'next'
+ 
+// either Static metadata
+export const metadata: Metadata = {
+  title: 'Home Page',
+}
+
 
 async function getProjects() {
   const res = await fetch('https://portfolio-backend001.vercel.app/api/projects');

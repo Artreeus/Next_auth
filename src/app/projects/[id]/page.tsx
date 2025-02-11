@@ -1,6 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ExternalLink, ArrowLeft } from "lucide-react";
+import { ExternalLink, ArrowLeft } from "lucide-react";import type { Metadata } from 'next'
+ 
+// either Static metadata
+export const metadata: Metadata = {
+  title: 'Dynamic Project Page',
+}
 
 async function getProject(id: string) {
   const res = await fetch(

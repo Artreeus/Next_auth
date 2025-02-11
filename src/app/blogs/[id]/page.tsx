@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from 'next'
 import { ArrowLeft, Calendar } from "lucide-react";
 
 async function getBlog(id: string) {
@@ -8,6 +9,14 @@ async function getBlog(id: string) {
   );
   const data = await res.json();
   return data;
+
+
+}
+
+ 
+// either Static metadata
+export const metadata: Metadata = {
+  title: 'Dynamic Blog Page',
 }
 
 export default async function BlogPage({ params }: { params: { id: string } }) {
