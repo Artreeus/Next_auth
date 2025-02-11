@@ -73,7 +73,7 @@ const Navbar = ({ session }: { session: userProps | null }) => {
           href="/"
           className="ml-4 text-xl font-semibold text-white hover:text-gray-200"
         >
-          NextAuth
+          M.Hasan
         </Link>
       </div>
 
