@@ -10,6 +10,17 @@ async function getProjects() {
   return data;
 }
 
+interface Project {
+  _id: string;
+  title: string;
+  description: string;
+  imageUrl: string;
+  liveLink: string;
+  technologies: string[];
+  createdAt: string;
+  updatedAt: string;
+}
+
 export default async function ProjectsPage() {
   const projects = await getProjects();
 
@@ -26,7 +37,7 @@ export default async function ProjectsPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project: any) => (
+          {projects.map((project: Project) => (
             <Link
               href={`/projects/${project._id}`}
               key={project._id}

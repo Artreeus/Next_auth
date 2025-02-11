@@ -8,6 +8,17 @@ async function getBlogs() {
   return data;
 }
 
+interface Blog {
+  _id: string;
+  title: string;
+  content: string;
+  imageUrl: string;
+  category: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+
 export default async function BlogsPage() {
   const blogs = await getBlogs();
 
@@ -24,7 +35,7 @@ export default async function BlogsPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogs.map((blog: any) => (
+          {blogs.map((blog: Blog) => (
             <Link
               href={`/blogs/${blog._id}`}
               key={blog._id}
@@ -43,7 +54,7 @@ export default async function BlogsPage() {
                   {blog.title}
                 </h2>
                 <p className="text-muted-foreground line-clamp-2 mb-4">
-                  {blog.description}
+                  {blog.content}
                 </p>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <BookOpen className="w-4 h-4" />

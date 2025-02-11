@@ -2,29 +2,26 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Calendar } from "lucide-react";
 
+async function getBlog(id: string) {
+  try {
+    const res = await fetch(
+      `https://portfolio-backend001.vercel.app/api/blogs/${id}`
+    );
 
-export async function generateMetadata({ params }: { params: { id: string } }) {
+    if (!res.ok) {
+      throw new Error(`Failed to fetch blog: ${res.statusText}`);
+    }
 
-  const { id } = await params;
-  const res = await fetch(`https://portfolio-backend001.vercel.app/api/blogs/${id}`);
-
-  const blog = await res.json();
-
-  return {
-    title: blog.title,
-    description : blog.description
+    return await res.json();
+  } catch (error) {
+    console.error("Error fetching blog:", error);
+    return null;
   }
 }
 
-async function getBlog(id: string) {
-  const res = await fetch(
-    `https://portfolio-backend001.vercel.app/api/blogs/${id}`
-  );
-  const data = await res.json();
-  return data;
-}
 
-export default async function BlogPage({ params }: { params: { id: string } }) {
+export default async function BlogPage({ params }: { params: { id: string } })
+ {
   const blog = await getBlog(params.id);
   const date = new Date(blog.createdAt).toLocaleDateString("en-US", {
     year: "numeric",
