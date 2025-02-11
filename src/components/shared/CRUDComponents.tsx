@@ -106,7 +106,7 @@ export const BlogCRUD: React.FC = () => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          isEditing ? updateBlog() : createBlog();
+          return isEditing ? updateBlog() : createBlog();
         }}
         className="mb-4 space-y-4"
       >
@@ -304,8 +304,13 @@ export const ProjectCRUD: React.FC = () => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          isEditing ? updateProject() : createProject();
+          if (isEditing) {
+            updateProject();
+          } else {
+            createProject();
+          }
         }}
+        
         className="mb-4 space-y-4"
       >
         <input
@@ -412,13 +417,7 @@ export const ProjectCRUD: React.FC = () => {
           >
             <div>
               <h3 className="font-bold">{project.title}</h3>
-              <div className="flex gap-2 mt-2">
-                {project.technologies.map((tech) => (
-                  <span key={tech} className="px-2 py-1 rounded text-xs">
-                    {tech}
-                  </span>
-                ))}
-              </div>
+              <p>{project.description}</p>
             </div>
             <div className="space-x-2">
               <button
@@ -441,4 +440,6 @@ export const ProjectCRUD: React.FC = () => {
   );
 };
 
-export default { BlogCRUD, ProjectCRUD };
+// Export both components to fix the linting error
+const App = { BlogCRUD, ProjectCRUD };
+export default App;

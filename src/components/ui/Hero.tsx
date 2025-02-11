@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -36,7 +36,7 @@ const Hero = () => {
           transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
         >
           <a
-            href="https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
+            href="https://drive.google.com/file/d/1TtktmxlqjIn9cRKbjtRxA7PJe_mXGNh9/view?usp=sharing"
             download
             className="bg-teal-600 hover:bg-teal-700 text-white py-3 px-6 rounded-full text-lg transition duration-300 inline-block"
           >

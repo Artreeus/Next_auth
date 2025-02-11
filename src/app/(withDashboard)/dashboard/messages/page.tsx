@@ -2,12 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { Trash2 } from 'lucide-react';
-import type { Metadata } from 'next'
- 
-// either Static metadata
-export const metadata: Metadata = {
-  title: 'Messages',
-}
 
 interface Message {
   name: string;
@@ -15,7 +9,7 @@ interface Message {
   message: string;
 }
 
-function page() {
+function Page() {
   const [messages, setMessages] = useState<Message[]>([]);
 
   useEffect(() => {
@@ -33,7 +27,7 @@ function page() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4">
+    <div className="min-h-screen bg-glassmorphism py-8 px-4">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-3xl font-bold text-gray-900 mb-8">Messages</h1>
         
@@ -73,4 +67,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

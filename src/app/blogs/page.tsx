@@ -1,19 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { BookOpen } from "lucide-react";
-import type { Metadata } from 'next'
-
 
 async function getBlogs() {
   const res = await fetch("https://portfolio-backend001.vercel.app/api/blogs");
   const data = await res.json();
   return data;
-}
-
- 
-// either Static metadata
-export const metadata: Metadata = {
-  title: 'All Blog Page',
 }
 
 export default async function BlogsPage() {

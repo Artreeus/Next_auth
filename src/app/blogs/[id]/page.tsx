@@ -1,7 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { Metadata } from 'next'
 import { ArrowLeft, Calendar } from "lucide-react";
+
+
+export async function generateMetadata({ params }: { params: { id: string } }) {
+
+  const { id } = await params;
+  const res = await fetch(`https://portfolio-backend001.vercel.app/api/blogs/${id}`);
+
+  const blog = await res.json();
+
+  return {
+    title: blog.title,
+    description : blog.description
+  }
+}
 
 async function getBlog(id: string) {
   const res = await fetch(
@@ -9,14 +22,6 @@ async function getBlog(id: string) {
   );
   const data = await res.json();
   return data;
-
-
-}
-
- 
-// either Static metadata
-export const metadata: Metadata = {
-  title: 'Dynamic Blog Page',
 }
 
 export default async function BlogPage({ params }: { params: { id: string } }) {
