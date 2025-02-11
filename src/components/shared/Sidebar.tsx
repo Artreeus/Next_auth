@@ -32,6 +32,15 @@ const Sidebar = () => {
             <span>Project Operations</span>
           </Link>
         </li>
+        <li>
+          <Link
+            href="/dashboard/messages"
+            className="flex items-center space-x-2 p-3 rounded-md  text-white"
+          >
+            <FaUser className="h-5 w-5" />
+            <span>Messages</span>
+          </Link>
+        </li>
       </ul>
     </div>
   );

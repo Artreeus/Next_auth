@@ -52,16 +52,19 @@ const Navbar = ({ session }: { session: userProps | null }) => {
           {menuOpen && (
             <ul
               tabIndex={0}
-              className="absolute mt-3 z-10 p-2 shadow-md bg-glassmorphism text-white rounded-md w-52 .text-glassmorphism"
+              className="absolute mt-3 z-10 p-2 shadow-md bg-glassmorphism  rounded-md w-52 text-glassmorphism"
             >
-              <li className="py-2 px-4 text-glassmorphism">
+              <li className="py-2 px-4 text-black         text-glassmorphism">
                 <Link href="/">Home</Link>
               </li>
-              <li className="py-2 px-4 text-glassmorphism">
-                <Link href="/about">About Us</Link>
+              <li className="py-2 px-4  text-black                text-glassmorphism">
+                <Link href="/projects">My Projects</Link>
               </li>
-              <li className="py-2 px-4 text-glassmorphism">
-                <Link href="/support">Support</Link>
+              <li className="py-2 px-4 text-black text-glassmorphism">
+                <Link href="/blogs">Blogs</Link>
+              </li>
+              <li className="py-2 px-4 text-black text-glassmorphism">
+                <Link href="/contact">Contact Me</Link>
               </li>
             </ul>
           )}
