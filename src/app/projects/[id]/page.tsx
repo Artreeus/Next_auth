@@ -1,9 +1,11 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { ExternalLink, ArrowLeft } from 'lucide-react';
+import Image from "next/image";
+import Link from "next/link";
+import { ExternalLink, ArrowLeft } from "lucide-react";
 
 async function getProject(id: string) {
-  const res = await fetch(`http://localhost:5000/api/projects/${id}`);
+  const res = await fetch(
+    `https://portfolio-backend001.vercel.app/api/projects/${id}`
+  );
   const data = await res.json();
   return data;
 }
@@ -48,8 +50,8 @@ export default async function ProjectPage({
               <h2 className="text-xl font-semibold mb-4">Technologies Used</h2>
               <div className="flex flex-wrap gap-2">
                 {project.technologies[0]
-                  .replace(/[\[\]']/g, '')
-                  .split(',')
+                  .replace(/[\[\]']/g, "")
+                  .split(",")
                   .map((tech: string) => (
                     <span
                       key={tech}

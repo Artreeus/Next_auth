@@ -1,23 +1,21 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { ArrowLeft, Calendar } from 'lucide-react';
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowLeft, Calendar } from "lucide-react";
 
 async function getBlog(id: string) {
-  const res = await fetch(`http://localhost:5000/api/blogs/${id}`);
+  const res = await fetch(
+    `https://portfolio-backend001.vercel.app/api/blogs/${id}`
+  );
   const data = await res.json();
   return data;
 }
 
-export default async function BlogPage({
-  params,
-}: {
-  params: { id: string };
-}) {
+export default async function BlogPage({ params }: { params: { id: string } }) {
   const blog = await getBlog(params.id);
-  const date = new Date(blog.createdAt).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
+  const date = new Date(blog.createdAt).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
   });
 
   return (
@@ -55,7 +53,10 @@ export default async function BlogPage({
               {blog.description}
             </p>
             {blog.content && (
-              <div className="mt-8" dangerouslySetInnerHTML={{ __html: blog.content }} />
+              <div
+                className="mt-8"
+                dangerouslySetInnerHTML={{ __html: blog.content }}
+              />
             )}
           </div>
 

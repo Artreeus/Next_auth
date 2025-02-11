@@ -8,13 +8,13 @@ import Footer from '@/components/ui/Footer';
 
 
 async function getProjects() {
-  const res = await fetch('http://localhost:5000/api/projects');
+  const res = await fetch('https://portfolio-backend001.vercel.app/api/projects');
   const data = await res.json();
   return data;
 }
 
 async function getBlogs() {
-  const res = await fetch('http://localhost:5000/api/blogs');
+  const res = await fetch('https://portfolio-backend001.vercel.app/api/blogs');
   const data = await res.json();
   return data;
 }

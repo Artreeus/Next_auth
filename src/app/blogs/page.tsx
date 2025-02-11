@@ -1,9 +1,9 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { BookOpen } from 'lucide-react';
+import Link from "next/link";
+import Image from "next/image";
+import { BookOpen } from "lucide-react";
 
 async function getBlogs() {
-  const res = await fetch('http://localhost:5000/api/blogs');
+  const res = await fetch("https://portfolio-backend001.vercel.app/api/blogs");
   const data = await res.json();
   return data;
 }
@@ -24,7 +24,7 @@ export default async function BlogsPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogs.map((blog :any) => (
+          {blogs.map((blog: any) => (
             <Link
               href={`/blogs/${blog._id}`}
               key={blog._id}

@@ -3,12 +3,12 @@ import { FaUser, FaCog, FaHome } from "react-icons/fa";
 
 const Sidebar = () => {
   return (
-    <div className="bg-slate-100 min-h-screen p-4 rounded-xl">
+    <div className="bg-glassmorphism  min-h-screen p-4 rounded-xl">
       <ul className="space-y-4">
         <li>
           <Link
             href="/dashboard"
-            className="flex items-center space-x-2 p-3 rounded-md hover:bg-gray-200 text-gray-700"
+            className="flex items-center space-x-2 p-3 rounded-md  text-white"
           >
             <FaHome className="h-5 w-5" />
             <span>Dashboard</span>
@@ -16,20 +16,20 @@ const Sidebar = () => {
         </li>
         <li>
           <Link
-            href="/dashboard/user-info"
-            className="flex items-center space-x-2 p-3 rounded-md hover:bg-gray-200 text-gray-700"
+            href="/dashboard/blogs"
+            className="flex items-center space-x-2 p-3 rounded-md  text-white"
           >
             <FaUser className="h-5 w-5" />
-            <span>User Info</span>
+            <span>Blog Operations</span>
           </Link>
         </li>
         <li>
           <Link
-            href="/dashboard/settings"
-            className="flex items-center space-x-2 p-3 rounded-md hover:bg-gray-200 text-gray-700"
+            href="/dashboard/projects"
+            className="flex items-center space-x-2 p-3 rounded-md  text-white"
           >
             <FaCog className="h-5 w-5" />
-            <span>Settings</span>
+            <span>Project Operations</span>
           </Link>
         </li>
       </ul>

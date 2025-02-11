@@ -1,9 +1,11 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { Code2 } from 'lucide-react';
+import Link from "next/link";
+import Image from "next/image";
+import { Code2 } from "lucide-react";
 
 async function getProjects() {
-  const res = await fetch('http://localhost:5000/api/projects');
+  const res = await fetch(
+    "https://portfolio-backend001.vercel.app/api/projects"
+  );
   const data = await res.json();
   return data;
 }
@@ -24,7 +26,7 @@ export default async function ProjectsPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project:any) => (
+          {projects.map((project: any) => (
             <Link
               href={`/projects/${project._id}`}
               key={project._id}
