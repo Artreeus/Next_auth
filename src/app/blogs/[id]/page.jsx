@@ -2,26 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Calendar } from "lucide-react";
 
-async function getBlog(id: string) {
-  try {
-    const res = await fetch(
-      `https://portfolio-backend001.vercel.app/api/blogs/${id}`
-    );
-
-    if (!res.ok) {
-      throw new Error(`Failed to fetch blog: ${res.statusText}`);
-    }
-
-    return await res.json();
-  } catch (error) {
-    console.error("Error fetching blog:", error);
-    return null;
-  }
+async function getBlog(id) {
+  const res = await fetch(
+    `https://portfolio-backend001.vercel.app/api/blogs/${id}`
+  );
+  const data = await res.json();
+  return data;
 }
 
-
-export default async function BlogPage({ params }: { params: { id: string } })
- {
+export default async function BlogPage({ params }) {
   const blog = await getBlog(params.id);
   const date = new Date(blog.createdAt).toLocaleDateString("en-US", {
     year: "numeric",
@@ -74,7 +63,7 @@ export default async function BlogPage({ params }: { params: { id: string } })
           {blog.tags && (
             <div className="mt-8 pt-8 border-t">
               <div className="flex flex-wrap gap-2">
-                {blog.tags.map((tag: string) => (
+                {blog.tags.map(() => (
                   <span
                     key={tag}
                     className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm"

@@ -1,17 +1,17 @@
-"use server";
+// "use server";
 
-import { FormValues } from "@/app/login/page";
+// import { FormValues } from "@/app/login/page";
 
-export const loginUser = async (data : FormValues) => {
+// export const loginUser = async (data : FormValues) => {
 
-  const res = await fetch(`${process.env.BACKEND_URL}/login`, {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-    },
-    body: JSON.stringify(data),
-    cache: "no-store",
-  });
-  const userInfo = await res.json();
-  return userInfo;
-};
+//   const res = await fetch(`${process.env.BACKEND_URL}/login`, {
+//     method: "POST",
+//     headers: {
+//       "content-type": "application/json",
+//     },
+//     body: JSON.stringify(data),
+//     cache: "no-store",
+//   });
+//   const userInfo = await res.json();
+//   return userInfo;
+// };

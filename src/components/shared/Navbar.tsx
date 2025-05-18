@@ -23,7 +23,7 @@ const Navbar = ({ session }: { session: userProps | null }) => {
   };
 
   return (
-    <div className="w-full mx-auto flex items-center justify-between py-4 px-6 bg-glassmorphism container mt-2">
+    <div className="w-full mx-auto flex items-center justify-between py-4 px-6 bg-glassmorphism container mt-2 z-50 relative">
       {/* Left section with the hamburger menu for mobile */}
       <div className="flex items-center">
         <div className="relative lg:hidden">
@@ -52,7 +52,7 @@ const Navbar = ({ session }: { session: userProps | null }) => {
           {menuOpen && (
             <ul
               tabIndex={0}
-              className="absolute mt-3 z-10 p-2 shadow-md bg-glassmorphism  rounded-md w-52 text-glassmorphism"
+              className="absolute mt-3 z-10 p-2 shadow-md bg-glassmorphism  rounded-md w-52 text-glassmorphism z-100 absolute"
             >
               <li className="py-2 px-4 text-black         text-glassmorphism">
                 <Link href="/">Home</Link>
@@ -92,7 +92,7 @@ const Navbar = ({ session }: { session: userProps | null }) => {
           <li className="hover:text-gray-200">
             <Link href="/contact">Contact Me</Link>
           </li>
-          <li className="hover:text-gray-200 hidden">
+          <li className="hover:text-gray-200 ">
             <Link href="/dashboard">Dashboard</Link>
           </li>
         </ul>

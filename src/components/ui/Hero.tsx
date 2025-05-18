@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="relative flex md:flex-row sm:flex-col items-center justify container mx-auto px-6 md:px-12 py-16 gap-10">
+    <section className="relative flex flex-col lg:flex-row md:flex-row sm:flex-col items-center container mx-auto px-6 md:px-12 py-16 gap-10 z-10">
       {/* Main Content */}
 
       {/* Left Side - Text */}
@@ -46,7 +46,7 @@ const Hero = () => {
       </div>
 
       {/* Right Side - Image */}
-      <div className="w-full md:w-1/2">
+      <div className="w-full md:w-1/2 flex justify-center">
         <motion.div
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}

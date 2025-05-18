@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ExternalLink, ArrowLeft } from "lucide-react";
 
-async function getProject(id: string) {
+async function getProject(id) {
   const res = await fetch(
     `https://portfolio-backend001.vercel.app/api/projects/${id}`
   );
@@ -10,12 +10,9 @@ async function getProject(id: string) {
   return data;
 }
 
-export default async function ProjectPage({
-  params,
-}: {
-  params: { id: string };
-}) {
-  const project = await getProject(params.id);
+export default async function ProjectPage({ params }) {
+  const { id } = params; // Deconstructing params to get id
+  const project = await getProject(id); // Pass the id to getProject
 
   return (
     <main className="min-h-screen ">
@@ -52,14 +49,18 @@ export default async function ProjectPage({
                 {project.technologies[0]
                   .replace(/[\[\]']/g, "")
                   .split(",")
-                  .map((tech: string) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm"
-                    >
-                      {tech.trim()}
-                    </span>
-                  ))}
+                  .map(
+                    (
+                      tech // Define tech here
+                    ) => (
+                      <span
+                        key={tech.trim()} // Make sure to use `tech.trim()` as the key
+                        className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm"
+                      >
+                        {tech.trim()}
+                      </span>
+                    )
+                  )}
               </div>
             </div>
 
