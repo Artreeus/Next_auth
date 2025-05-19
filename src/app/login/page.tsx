@@ -119,42 +119,7 @@ const LoginPage = () => {
             </button>
           </form>
 
-          <div className="mt-8 text-center">
-            <p className="text-gray-500 mb-4">Or continue with</p>
-            <div className="flex justify-center gap-4">
-              <button
-                className="flex items-center justify-center w-12 h-12 bg-gray-100 rounded-full shadow-md hover:bg-gray-200"
-                onClick={() =>
-                  signIn("google", {
-                    callbackUrl: "/dashboard",
-                  })
-                }
-              >
-                <Image
-                  src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png"
-                  width={30}
-                  height={30}
-                  alt="Google logo"
-                />
-              </button>
-
-              <button
-                className="flex items-center justify-center w-12 h-12 bg-gray-100 rounded-full shadow-md hover:bg-gray-200"
-                onClick={() =>
-                  signIn("github", {
-                    callbackUrl: "/dashboard",
-                  })
-                }
-              >
-                <Image
-                  src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
-                  width={25}
-                  height={25}
-                  alt="GitHub logo"
-                />
-              </button>
-            </div>
-          </div>
+        
         </div>
       </div>
     </div>
