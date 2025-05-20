@@ -35,7 +35,7 @@ export default async function BlogPage({ params }) {
     Math.max(1, Math.ceil((blog.content?.length || 0) / 1500)) + " min read";
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-glassmorphism">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Back button */}
         <Link

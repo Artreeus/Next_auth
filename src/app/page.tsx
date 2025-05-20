@@ -89,6 +89,7 @@ export default function Home() {
       {/* Central glow focus */}
       <div className="focus-glow"></div>
       
+      {/* Note: No need to add extra padding here since we have global styles now */}
       <main className="min-h-screen relative z-10">
         <Hero />
         <InfiniteCarousel />

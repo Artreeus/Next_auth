@@ -107,8 +107,8 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="text-base font-medium">Email</h4>
-                  <a href="mailto:hello@yourname.com" className="text-muted-foreground hover:text-primary transition-colors">
-                    hello@yourname.com
+                  <a href="mailto:ratulhasan048@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+                    ratulhasan048@gmail.com
                   </a>
                 </div>
               </div>
@@ -120,7 +120,7 @@ export default function ContactSection() {
                 <div>
                   <h4 className="text-base font-medium">Phone</h4>
                   <a href="tel:+11234567890" className="text-muted-foreground hover:text-primary transition-colors">
-                    +1 (123) 456-7890
+                    +880 (17171) 60829
                   </a>
                 </div>
               </div>
@@ -132,7 +132,7 @@ export default function ContactSection() {
                 <div>
                   <h4 className="text-base font-medium">Location</h4>
                   <p className="text-muted-foreground">
-                    San Francisco, California
+                    1/11 Allenbari staff quater , Dhaka-1215
                   </p>
                 </div>
               </div>
