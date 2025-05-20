@@ -1,6 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { BookOpen } from "lucide-react";
+import SectionHeading from "@/components/shared/SectionHeading"
+
+
+
 
 async function getBlogs() {
   const res = await fetch("https://portfolio-backend001.vercel.app/api/blogs");
@@ -26,12 +30,8 @@ export default async function BlogsPage() {
     <main className="min-h-screen ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="mb-12">
-          <h1 className="text-4xl font-bold tracking-tight text-foreground">
-            All Blog Posts
-          </h1>
-          <p className="mt-2 text-lg text-muted-foreground">
-            Explore my thoughts, insights, and experiences
-          </p>
+          <SectionHeading title="All Blogs Page"/>
+          
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -30,7 +30,6 @@ const LoginPage = () => {
         redirect: false,
         email,
         password,
-        callbackUrl: "/dashboard",
       });
 
       console.log("Sign in result:", result);
@@ -42,8 +41,13 @@ const LoginPage = () => {
           setDebugInfo(`Full result: ${JSON.stringify(result)}`);
         }
       } else if (result?.ok) {
-        console.log("Login successful, redirecting to:", result.url);
-        router.push(result.url || "/dashboard");
+        console.log("Login successful, redirecting to dashboard");
+        // Use a relative path instead of the full URL
+        router.push("/dashboard");
+        // Force a refresh if navigation seems stuck
+        setTimeout(() => {
+          window.location.href = "/dashboard";
+        }, 1000); // Fallback if router.push doesn't work within 1 second
       }
     } catch (err) {
       console.error("Login error:", err);
@@ -118,8 +122,6 @@ const LoginPage = () => {
               {loading ? "Signing in..." : "Sign In"}
             </button>
           </form>
-
-        
         </div>
       </div>
     </div>

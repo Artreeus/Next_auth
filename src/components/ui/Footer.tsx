@@ -3,7 +3,7 @@ import { Github, Twitter, Linkedin, Mail } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="shadow-xl my-16">
+    <footer className="shadow-xl container mx-auto rounded-xl bg-background mt-20 mb-5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* About Section */}
@@ -54,9 +54,9 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold text-foreground mb-4">Contact</h3>
             <ul className="space-y-2 text-muted-foreground">
-              <li>San Francisco, CA</li>
-              <li>contact@example.com</li>
-              <li>+1 (555) 123-4567</li>
+              <li>Allenbari staff quater Tejgaon - Dhaka - 1215</li>
+              <li>ratulhasan048@gmail.com</li>
+              <li>+880 1717 160 829</li>
             </ul>
           </div>
         </div>
